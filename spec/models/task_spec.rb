@@ -10,4 +10,9 @@ describe Task do
 	  	expect{ Task.create(title: "Make this test pass") }.to change{Task.count}.by(1)
 	  end
   end
+  context "#completed" do
+  	it "should indicate whether or not it has been completed" do
+  		expect(Task.new(title: "This task is not complete").completed).to be_false
+  	end
+  end
 end
