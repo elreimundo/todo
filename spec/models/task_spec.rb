@@ -13,6 +13,7 @@ describe Task do
   context "#completed" do
   	it "should indicate whether or not it has been completed" do
   		expect(Task.new(title: "This task is not complete").completed).to be_false
+  		expect(Task.new(title: "This task is donezo", completed: true).completed).to be_true
   	end
   end
 end
