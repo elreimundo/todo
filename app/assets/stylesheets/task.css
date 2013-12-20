@@ -7,7 +7,6 @@ h1{
 	color:#333;
 	margin-bottom: 0px;
 }
-
 .todo{
 	border-bottom: 1px black solid;
 }
@@ -22,11 +21,14 @@ h1{
 	width: 400px;
 }
 
-input[type='checkbox']{
-	margin-left: 20px;
-	background-color:#333;
-	width:1em;
-	height:1em;
+.box{
+	display:inline;
+	margin: 0 20px;
+	background-color:#eee;
+	width:15px;
+	height:15px;
+	border:1px solid #333;
+	padding:0px 9px;
 }
 
 input[type='submit']{
