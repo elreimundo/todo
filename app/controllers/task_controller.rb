@@ -7,5 +7,9 @@ class TaskController < ApplicationController
   end
 
   def uncomplete
+  	 if @task = Task.find(params[:id])
+	  	@task.completed = false
+	  	@task.save
+    end
   end
 end
