@@ -9,4 +9,11 @@ describe TaskController do
 			expect(@task.reload.completed).to be_true
 		end
 	end
+	context "#uncomplete" do
+		it "should mark a task as not completed" do
+			@task = Task.create(title: "Completed task", completed: true)
+			post :uncomplete, id: @task.id
+			expect(@task.reload.completed).to be_false
+		end
+	end
 end
