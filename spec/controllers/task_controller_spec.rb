@@ -16,4 +16,10 @@ describe TaskController do
 			expect(@task.reload.completed).to be_false
 		end
 	end
+	context "#destroy" do
+		it "should destroy the task in question" do
+			@task = Task.create(title: "Destroy this")
+			expect{delete :destroy, id: @task.id}.to change{Task.count}.by(-1)
+		end
+	end
 end
