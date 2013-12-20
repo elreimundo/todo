@@ -22,4 +22,9 @@ describe TaskController do
 			expect{delete :destroy, id: @task.id}.to change{Task.count}.by(-1)
 		end
 	end
+	context "#create" do
+		it "should create a task from a title" do
+			expect{post :create, task:{title: "New Todo!"}}.to change{Task.count}.by(1)
+		end
+	end
 end
