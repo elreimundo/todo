@@ -1,0 +1,14 @@
+<div class="container">
+	<h1>To Do-></h1>
+	<div class="tasks-all">
+		<% @tasks.each do |task| %>
+		  <%= render partial: 'todo', locals: {:'@task' => task} %>
+		<% end %>
+		<div class="todo-add">
+			<%= form_for :task, url: {action: 'create'}, remote: true do |f| %>
+			  <%= f.text_field :title %>
+			  <%= f.submit "Add" %>
+			<% end %>
+		</div>
+	</div>
+</div>

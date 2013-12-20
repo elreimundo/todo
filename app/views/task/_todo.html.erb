@@ -1,0 +1,7 @@
+<div class="todo">
+	<p>
+		<input type="checkbox" class="completed" id=<%= "#{@task.id}"%> <%= @task.completed ? 'checked' : '' %> >
+	  <%= @task.title %>
+	  <span class="right"><%=link_to "X", task_path(@task.id), method: :delete, remote: true, data: {confirm: "Are you sure you want to delete this task?"} %></span>
+  </p>
+</div>
